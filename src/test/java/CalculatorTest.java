@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class CalculatorTest {
+
   private AndroidDriver<MobileElement> driver;
 
   @AndroidFindBy(id = "com.google.android.calculator:id/digit_5")
@@ -38,7 +39,8 @@ public class CalculatorTest {
     capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
     capabilities.setCapability("noReset", true);
 
-    driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+    driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),
+        capabilities);
     PageFactory.initElements(new AppiumFieldDecorator(driver), this);
   }
 
